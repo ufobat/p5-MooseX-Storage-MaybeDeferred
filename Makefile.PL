@@ -19,7 +19,7 @@ WriteMakefile(
     },
     PREREQ_PM => {
         'MooseX::Storage'             => '0.52',
-        'MooseX::Role::Parameterized' => '1.4',
+        'MooseX::Role::Parameterized' => '1.04',
     },
     dist  => {
         COMPRESS => 'gzip -9f',
