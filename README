@@ -3,7 +3,7 @@ NAME
     programmers
 
 VERSION
-    0.0.1
+    0.0.2
 
 SYNOPSIS
         package Point;
@@ -38,10 +38,22 @@ SYNOPSIS
         $another_point = Point->load($filename, {format => 'JSON', io => 'File'});
 
 DESCRIPTION
-    This Module shoud give you the benefits of having a hard coded format
-    and io as usually used with MooseX::Storage but still offers you the
-    flexibility to change the io and format layer dynamically. It therefor
-    uses MooseX::Storage::Deferred.
+    With the module MooseX::Storage you are hard coding the definition of
+    the "format" and maybe "io" layer in the classes you want to serialize.
+    Whenever the methods "freeze" or "store" are called, it is not possible
+    to to change their behaviour. You always get what you have declared.
+
+    If you need to serialize into different formats you can use
+    MooseX::Storage::Deferred. Now, whenever you call "freeze" or "store"
+    you must provide parameters which define the format and the io layer.
+
+    This module should give you the benefits of both worlds. You need to
+    provide the "default_format" and "default_io" layers in the definitions
+    of the classes which you want to serialize. So classes that used to use
+    MooseX::Storage should still behave as before. But if you need to
+    serialize into a different format you have the flexibility of
+    MooseX::Storage::Deferred. Now you can provide the "format" and "io"
+    setting at runtime.
 
 SEE ALSO
     MooseX::Storage

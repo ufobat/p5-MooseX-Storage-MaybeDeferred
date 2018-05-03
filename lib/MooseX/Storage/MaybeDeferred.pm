@@ -5,7 +5,7 @@ use warnings;
 use namespace::autoclean;
 use MooseX::Role::Parameterized;
 
-our $VERSION = '0.0.1';
+our $VERSION = '0.0.2';
 
 parameter 'default_format' => (
     isa      => 'Defined',
@@ -75,7 +75,7 @@ MooseX::Storage::MaybeDeferred - A role for the less indecisive programmers
 
 =head1 VERSION
 
-0.0.1
+0.0.2
 
 =head1 SYNOPSIS
 
@@ -112,9 +112,18 @@ MooseX::Storage::MaybeDeferred - A role for the less indecisive programmers
 
 =head1 DESCRIPTION
 
-This Module shoud give you the benefits of having a hard coded format and io as usually used
-with L<MooseX::Storage> but still offers you the flexibility to change the io and format
-layer dynamically. It therefor uses L<MooseX::Storage::Deferred>.
+With the module L<MooseX::Storage> you are hard coding the definition of the C<format> and maybe C<io> layer
+in the classes you want to serialize. Whenever the methods C<freeze> or C<store> are called, it is not possible
+to to change their behaviour. You always get what you have declared.
+
+If you need to serialize into different formats you can use L<MooseX::Storage::Deferred>. Now, whenever you call
+C<freeze> or C<store> you B<must> provide parameters which define the format and the io layer.
+
+This module should give you the benefits of both worlds. You need to provide the C<default_format> and
+C<default_io> layers in the definitions of the classes which you want to serialize. So classes that
+used to use L<MooseX::Storage> should still behave as before. But if you need to serialize into a different format
+you have the flexibility of MooseX::Storage::Deferred. Now you B<can> provide the C<format> and C<io> setting at
+runtime.
 
 =head1 SEE ALSO
 
