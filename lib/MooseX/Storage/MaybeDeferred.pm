@@ -71,7 +71,7 @@ __END__
 
 =head1 NAME
 
-MooseX::Storage::MaybeDeferred - A role for the less indecesive programmers
+MooseX::Storage::MaybeDeferred - A role for the less indecisive programmers
 
 =head1 VERSION
 
