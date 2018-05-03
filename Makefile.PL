@@ -24,7 +24,7 @@ WriteMakefile(
     dist  => {
         COMPRESS => 'gzip -9f',
         SUFFIX   => 'gz',
-        PREOP    => 'pod2text lib/IO/AIO/LoadLimited.pm | tee README >$(DISTVNAME)/README;',
+        PREOP    => 'pod2text lib/MooseX/Storage/MaybeDeferred.pm | tee README >$(DISTVNAME)/README;',
     },
     clean => { FILES => 'MooseX-Storage-MaybeDeferred-*' },
 );

@@ -1,0 +1,61 @@
+NAME
+    MooseX::Storage::MaybeDeferred - A role for the less indecesive
+    programmers
+
+VERSION
+    0.0.1
+
+SYNOPSIS
+        package Point;
+        use Moose;
+        use MooseX::Storage;
+
+        with MooseX::Storage::MaybeDeferred => {
+            default_format => 'JSON',
+            default_io     => 'File',
+        };
+
+        has 'x' => (is => 'rw', isa => 'Int');
+        has 'y' => (is => 'rw', isa => 'Int');
+
+        1;
+
+        my $p = Point->new();
+        $p->freeze();
+        # or
+        $p->freeze({format => 'Storable'});
+
+        ...
+
+        $p->store($filename);
+        $p->store($filename, {format => 'Storable', io => 'AtomicFile'});
+
+        ...
+
+        my $another_point;
+        $another_point = Point->load($filename);
+        # or
+        $another_point = Point->load($filename, {format => 'JSON', io => 'File'});
+
+DESCRIPTION
+    This Module shoud give you the benefits of having a hard coded format
+    and io as usually used with MooseX::Storage but still offers you the
+    flexibility to change the io and format layer dynamically. It therefor
+    uses MooseX::Storage::Deferred.
+
+SEE ALSO
+    MooseX::Storage
+    MooseX::Storage::Deferred
+
+ACKNOWLEDGEMENTS
+    Thanks www.netdescribe.com.
+
+LICENSE AND COPYRIGHT
+    Copyright 2017 Martin Barth.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of either: the GNU General Public License as published
+    by the Free Software Foundation; or the Artistic License.
+
+    See <http://dev.perl.org/licenses/> for more information.
+
