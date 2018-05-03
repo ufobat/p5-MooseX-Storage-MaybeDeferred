@@ -73,11 +73,11 @@ __END__
 
 MooseX::Storage::MaybeDeferred - A role for the less indecesive programmers
 
-=head VERSION
+=head1 VERSION
 
 0.0.1
 
-=head SYNOPSIS
+=head1 SYNOPSIS
 
     package Point;
     use Moose;
@@ -110,13 +110,13 @@ MooseX::Storage::MaybeDeferred - A role for the less indecesive programmers
     # or
     $another_point = Point->load($filename, {format => 'JSON', io => 'File'});
 
-=head DESCRIPTION
+=head1 DESCRIPTION
 
 This Module shoud give you the benefits of having a hard coded format and io as usually used
 with L<MooseX::Storage> but still offers you the flexibility to change the io and format
 layer dynamically. It therefor uses L<MooseX::Storage::Deferred>.
 
-=head SEE ALSO
+=head1 SEE ALSO
 
 =over
 
