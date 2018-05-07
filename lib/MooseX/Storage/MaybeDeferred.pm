@@ -5,7 +5,7 @@ use warnings;
 use namespace::autoclean;
 use MooseX::Role::Parameterized;
 
-our $VERSION = '0.0.4';
+our $VERSION = '0.0.5';
 
 parameter 'default_format' => (
     isa      => 'Defined',
@@ -66,8 +66,6 @@ role {
 __END__
 
 =pod
-
-=encoding UTF-8
 
 =head1 NAME
 
@@ -138,6 +136,16 @@ runtime.
 =head1 ACKNOWLEDGEMENTS
 
 Thanks L<www.netdescribe.com>.
+
+=head1 CHANGES
+
+=over
+
+=item version 0.0.5
+
+Fixed tests so it is now  able to run on Perl 5.8.x
+
+=back
 
 =head1 LICENSE AND COPYRIGHT
 

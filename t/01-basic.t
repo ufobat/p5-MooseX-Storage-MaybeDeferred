@@ -6,20 +6,20 @@ use Storable qw//;
 use JSON::MaybeXS qw//;
 use File::Temp qw/tempfile/;
 
-package Foo {
-    use strict;
-    use warnings;
-    use Moose;
-    use MooseX::Storage::MaybeDeferred;
+package Foo;
+use strict;
+use warnings;
+use Moose;
+use MooseX::Storage::MaybeDeferred;
 
-    with 'MooseX::Storage::MaybeDeferred' => {
-        default_format => 'Storable',
-        default_io     => 'File'
-    };
-
-    has attribute => (is => 'ro', isa => 'Int', default => 42);
-
+with 'MooseX::Storage::MaybeDeferred' => {
+    default_format => 'Storable',
+    default_io     => 'File'
 };
+
+has attribute => (is => 'ro', isa => 'Int', default => 42);
+
+package main;
 
 my $foo = Foo->new();
 ok $foo, 'could create a Foo instance';

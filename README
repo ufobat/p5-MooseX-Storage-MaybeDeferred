@@ -62,6 +62,10 @@ SEE ALSO
 ACKNOWLEDGEMENTS
     Thanks www.netdescribe.com.
 
+CHANGES
+    version 0.0.5
+        Fixed tests so it is now able to run on Perl 5.8.x
+
 LICENSE AND COPYRIGHT
     Copyright 2018 Martin Barth.
 

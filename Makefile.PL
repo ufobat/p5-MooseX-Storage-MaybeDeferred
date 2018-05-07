@@ -10,7 +10,7 @@ WriteMakefile(
     ABSTRACT_FROM    => 'lib/MooseX/Storage/MaybeDeferred.pm',
     LICENSE          => 'perl_5',
     PL_FILES         => {},
-    MIN_PERL_VERSION => '5.010',
+    MIN_PERL_VERSION => '5.008',
     CONFIGURE_REQUIRES => {
         'ExtUtils::MakeMaker' => '0',
     },
